@@ -35,7 +35,7 @@ def shop_trip() -> None:
             total_price_for_item = (cheapest_option[1].available_products[item]
                                     * customer.products_to_buy[item])
             total_price_for_item = int(total_price_for_item) \
-                if total_price_for_item.is_integer() \
+                if float(total_price_for_item).is_integer() \
                 else total_price_for_item
             total += round(total_price_for_item, 2)
             print(f"{customer.products_to_buy[item]} {item}s "
